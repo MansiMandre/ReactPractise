@@ -162,6 +162,8 @@ import About from "./Components/AboutUs";
 import Contact from "./Components/Contact";
 import Dashboard from "./Components/Dashboard";
 import Explore from "./Components/Explore";
+import Login from "./Components/Login";
+import ProtectedRoute from "./Components/ProtectedRoute"; // ✅ ProtectedRoute import
 import "./App.css"; // ✅ Tailwind import
 
 
@@ -199,6 +201,12 @@ function App() {
           <Route path="/home" element={<Home />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/Explore" element={<Explore />} />
+          <Route path='/login'element={<Login/>}/>
+          <Route path='/dashboard'element=  {
+  <ProtectedRoute>
+    <Dashboard />
+  </ProtectedRoute>
+} />
         </Routes>
 
         <Footer />
